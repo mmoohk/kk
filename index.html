@@ -1,135 +1,224 @@
 <!DOCTYPE html>
 <html lang="ar">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>متجر الزنوجج </title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>متجر الزنج الأرخص</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
 
-      .container {
-        width: 80%;
-        max-width: 800px;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
+  body {
+    font-family: 'Amiri', serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
 
-      h1 {
-        text-align: center;
-        color: #333;
-      }
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+  }
 
-      .product {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 10px;
-      }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
 
-      .product img {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        margin-right: 20px;
-      }
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #b76e79;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
 
-      .product-details {
-        flex: 1;
-      }
+  .subtitle {
+    font-size: 18px;
+    color: #fff;
+  }
 
-      .product-title {
-        font-size: 18px;
-        margin-bottom: 5px;
-      }
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-      .product-price {
-        color: #007bff;
-        font-weight: bold;
-      }
+  .product {
+    background-color: #333;
+    padding: 20px;
+    margin: 10px;
+    width: calc(33.33% - 40px);
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  }
 
-      .contact-info {
-        margin-top: 20px;
-        text-align: center;
-      }
+  .product img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
 
-      .payment-methods {
-        margin-top: 10px;
-        display: flex;
-        justify-content: center;
-      }
+  .product-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    margin: 10px 0;
+  }
 
-      .payment-methods img {
-        width: 50px;
-        margin: 0 10px;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-      }
+  .product-price {
+    font-size: 14px;
+    color: #00ff00;
+    font-weight: bold;
+  }
 
-      .payment-methods img:hover {
-        transform: scale(1.1);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>متجر الكتروني بسيط</h1>
+  .add-to-cart-button {
+    background-color: #b76e79;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
 
-      <div class="product">
-        <img
-          src="c:\Users\Bin_s\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\CDD96EEDD7F695F4D61802F8105BA2B0\WhatsApp Image 2024-07-07 at 13.12.22_0daa20c3.jpg"
-          alt="صورة المنتج"
-        />
-        <div class="product-details">
-          <div class="product-title"> الدجال</div>
-          <div class="product-price">السعر: $9</div>
-          <button>اشتر الآن</button>
-        </div>
-      </div>
+  .add-to-cart-button:hover {
+    background-color: #8c3d4f;
+  }
 
-      <div class="product">
-        <img
-          src="c:\Users\Bin_s\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\FF2CC3B8C7CAEAA068F2ABBC234583F5\WhatsApp Image 2024-07-07 at 13.08.55_93256bd0.jpg"
-          alt="صورة المنتج"
-        />
-        <div class="product-details">
-          <div class="product-title"> السارق</div>
-          <div class="product-price">السعر: $3</div>
-          <button>اشتر الآن</button>
-        </div>
-      </div>
+  .cart-icon {
+    position: relative;
+    cursor: pointer;
+  }
 
-      <div class="contact-info">
-        <h2>للاتصال:</h2>
-        <p>البريد الإلكتروني: oo3ooi@icloud.com</p>
-        <p>رقم الهاتف : +905340355912</p>
-      </div>
+  .cart-icon::after {
+    content: attr(data-count);
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+  }
 
-      <div class="payment-methods">
-        <img
-          src="c:\Users\Bin_s\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\B628386C9B92481FAB68FBF284BD6A64\WhatsApp Image 2024-07-07 at 13.08.55_c94de839.jpg"
-          alt="شعار ماستركارد"
-        />
-        <img
-          src="c:\Users\Bin_s\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\BBEB0C1B1FD44E392C7CE2FDBD137E87\WhatsApp Image 2024-07-07 at 13.07.53_a54a5a93.jpg"
-          alt="شعار فيزا"
-        />
-        <img
-          src="   C:\Users\Bin_s\Downloads\WhatsApp Image 2024-07-07 at 13.07.53_82e7bfd1.jpg "
-          alt="شعار باي بال"
-        />
-      </div>
+  @media (max-width: 768px) {
+    .product {
+      width: calc(50% - 40px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .product {
+      width: calc(100% - 40px);
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div>
+      <div class="title">متجر الزنج الأرخص</div>
+      <div class="subtitle">لسنا الوحيدون ولكننا الأفضل 🔥</div>
     </div>
-  </body>
+    <div>
+      <a href="cart.html" class="cart-icon" data-count="0">🛒</a>
+    </div>
+  </div>
+
+  <div class="products" id="products">
+    <div class="product">
+      <img src="https://i.ibb.co/98VzXWK/product-2.jpg" alt="منتج 1">
+      <div class="product-title">الدنكلي</div>
+      <div class="product-price">السعر: $10,90</div>
+      <button class="add-to-cart-button" onclick="addToCart('الدنكلي', 10.90)">أضف إلى السلة</button>
+    </div>
+
+    <div class="product">
+      <img src="https://i.ibb.co/XjbNSp7/product-1.jpg" alt="منتج 2">
+      <div class="product-title">ابو طرشمان</div>
+      <div class="product-price">السعر: $16,50</div>
+      <button class="add-to-cart-button" onclick="addToCart('ابو طرشمان', 16.50)">أضف إلى السلة</button>
+    </div>
+
+    <div class="product">
+      <img src="https://i.ibb.co/zG2YpBF/product3.jpg" alt="منتج 3">
+      <div class="product-title">الخازوق</div>
+      <div class="product-price">السعر: $33</div>
+      <button class="add-to-cart-button" onclick="addToCart('الخازوق', 33.00)">أضف إلى السلة</button>
+    </div>
+
+    <div class="product">
+      <img src="https://i.ibb.co/HC4FV76/product4.jpg" alt="منتج 4">
+      <div class="product-title">زنجيقا</div>
+      <div class="product-price">السعر: $18,75</div>
+      <button class="add-to-cart-button" onclick="addToCart('زنجيقا', 18.75)">أضف إلى السلة</button>
+    </div>
+
+    <div class="product">
+      <img src="https://i.ibb.co/Srqfby1/product5.jpg" alt="منتج 5">
+      <div class="product-title">زبليلي</div>
+      <div class="product-price">السعر: $2,90</div>
+      <button class="add-to-cart-button" onclick="addToCart('زبليلي', 2.90)">أضف إلى السلة</button>
+    </div>
+
+    <div class="product">
+      <img src="https://i.ibb.co/mR6SPqk/product6.jpg" alt="منتج 6">
+      <div class="product-title">كعبول</div>
+      <div class="product-price">السعر: $21,99</div>
+      <button class="add-to-cart-button" onclick="addToCart('كعبول', 21.99)">أضف إلى السلة</button>
+    </div>
+
+    <div class="product">
+      <img src="https://i.ibb.co/yRpnYp2/product7.jpg" alt="منتج 7">
+      <div class="product-title">ورياليلي</div>
+      <div class="product-price">السعر: $15,45</div>
+      <button class="add-to-cart-button" onclick="addToCart('ورياليلي', 15.45)">أضف إلى السلة</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  let cart = [];
+
+  function addToCart(productName, productPrice) {
+    cart.push({ name: productName, price: productPrice });
+    updateCartIcon();
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  function updateCartIcon() {
+    const cartIcon = document.querySelector('.cart-icon');
+    cartIcon.setAttribute('data-count', cart.length);
+  }
+
+  function loadCart() {
+    const savedCart = JSON.parse(localStorage.getItem('cart'));
+    if (savedCart) {
+      cart = savedCart;
+      updateCartIcon();
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadCart);
+</script>
+</body>
 </html>
+
