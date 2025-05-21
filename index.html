@@ -1,224 +1,36 @@
-<!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>متجر الزنج الأرخص</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/gift.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/index.css">
 
-  body {
-    font-family: 'Amiri', serif;
-    background-color: #000;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    background-color: #222;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-  }
-
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
-  .title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #b76e79;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-
-  .subtitle {
-    font-size: 18px;
-    color: #fff;
-  }
-
-  .products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .product {
-    background-color: #333;
-    padding: 20px;
-    margin: 10px;
-    width: calc(33.33% - 40px);
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-  }
-
-  .product img {
-    width: 100%;
-    max-height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-
-  .product-title {
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    margin: 10px 0;
-  }
-
-  .product-price {
-    font-size: 14px;
-    color: #00ff00;
-    font-weight: bold;
-  }
-
-  .add-to-cart-button {
-    background-color: #b76e79;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-  }
-
-  .add-to-cart-button:hover {
-    background-color: #8c3d4f;
-  }
-
-  .cart-icon {
-    position: relative;
-    cursor: pointer;
-  }
-
-  .cart-icon::after {
-    content: attr(data-count);
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background: red;
-    color: white;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 20px;
-  }
-
-  @media (max-width: 768px) {
-    .product {
-      width: calc(50% - 40px);
-    }
-  }
-
-  @media (max-width: 480px) {
-    .product {
-      width: calc(100% - 40px);
-    }
-  }
-</style>
+  <!-- Document Title -->
+  <title>I Have Something</title>
 </head>
+
 <body>
-<div class="container">
-  <div class="header">
-    <div>
-      <div class="title">متجر الزنج الأرخص</div>
-      <div class="subtitle">لسنا الوحيدون ولكننا الأفضل 🔥</div>
-    </div>
-    <div>
-      <a href="cart.html" class="cart-icon" data-count="0">🛒</a>
-    </div>
+  <!-- Background -->
+  <div class="night"></div>
+
+  <!-- Title -->
+  <h1 class="title"></h1>
+
+  <!-- Button -->
+  <div style="position: absolute; top: 60vh; width: 100%; display: flex; justify-content: center;">
+    <a href="flower.html" class="btn">
+      <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+        <path
+          d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z">
+        </path>
+      </svg>
+
+      <span class="text">Open</span>
+    </a>
   </div>
 
-  <div class="products" id="products">
-    <div class="product">
-      <img src="https://i.ibb.co/98VzXWK/product-2.jpg" alt="منتج 1">
-      <div class="product-title">الدنكلي</div>
-      <div class="product-price">السعر: $10,90</div>
-      <button class="add-to-cart-button" onclick="addToCart('الدنكلي', 10.90)">أضف إلى السلة</button>
-    </div>
-
-    <div class="product">
-      <img src="https://i.ibb.co/XjbNSp7/product-1.jpg" alt="منتج 2">
-      <div class="product-title">ابو طرشمان</div>
-      <div class="product-price">السعر: $16,50</div>
-      <button class="add-to-cart-button" onclick="addToCart('ابو طرشمان', 16.50)">أضف إلى السلة</button>
-    </div>
-
-    <div class="product">
-      <img src="https://i.ibb.co/zG2YpBF/product3.jpg" alt="منتج 3">
-      <div class="product-title">الخازوق</div>
-      <div class="product-price">السعر: $33</div>
-      <button class="add-to-cart-button" onclick="addToCart('الخازوق', 33.00)">أضف إلى السلة</button>
-    </div>
-
-    <div class="product">
-      <img src="https://i.ibb.co/HC4FV76/product4.jpg" alt="منتج 4">
-      <div class="product-title">زنجيقا</div>
-      <div class="product-price">السعر: $18,75</div>
-      <button class="add-to-cart-button" onclick="addToCart('زنجيقا', 18.75)">أضف إلى السلة</button>
-    </div>
-
-    <div class="product">
-      <img src="https://i.ibb.co/Srqfby1/product5.jpg" alt="منتج 5">
-      <div class="product-title">زبليلي</div>
-      <div class="product-price">السعر: $2,90</div>
-      <button class="add-to-cart-button" onclick="addToCart('زبليلي', 2.90)">أضف إلى السلة</button>
-    </div>
-
-    <div class="product">
-      <img src="https://i.ibb.co/mR6SPqk/product6.jpg" alt="منتج 6">
-      <div class="product-title">كعبول</div>
-      <div class="product-price">السعر: $21,99</div>
-      <button class="add-to-cart-button" onclick="addToCart('كعبول', 21.99)">أضف إلى السلة</button>
-    </div>
-
-    <div class="product">
-      <img src="https://i.ibb.co/yRpnYp2/product7.jpg" alt="منتج 7">
-      <div class="product-title">ورياليلي</div>
-      <div class="product-price">السعر: $15,45</div>
-      <button class="add-to-cart-button" onclick="addToCart('ورياليلي', 15.45)">أضف إلى السلة</button>
-    </div>
-  </div>
-</div>
-
-<script>
-  let cart = [];
-
-  function addToCart(productName, productPrice) {
-    cart.push({ name: productName, price: productPrice });
-    updateCartIcon();
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }
-
-  function updateCartIcon() {
-    const cartIcon = document.querySelector('.cart-icon');
-    cartIcon.setAttribute('data-count', cart.length);
-  }
-
-  function loadCart() {
-    const savedCart = JSON.parse(localStorage.getItem('cart'));
-    if (savedCart) {
-      cart = savedCart;
-      updateCartIcon();
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', loadCart);
-</script>
+  <script src="js/index.js"></script>
 </body>
-</html>
 
+</html>
